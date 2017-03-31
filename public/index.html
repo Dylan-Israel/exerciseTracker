@@ -1,0 +1,64 @@
+<!doctype html>
+<html ng-app='exerciseApp'>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+    <script src='js/app.js'></script>
+</head>
+
+<body ng-controller='exerciseCtrl' class="container text-center">
+    <header class='text-center'>
+        <h3>Exercise Tracker</h3>
+        <h4><a href="https://www.freecodecamp.com" target="blank">
+Free Code Camp: APIs and Microservices</a></h4>
+        <a href="https://www.YouTube.com/CodingTutorials360" target="blank">
+            <img src='/img/logoWhiteBack.png' width="250">
+            <h5>YouTube.com/CodingTutorials360</h5>
+        </a>
+        <h5>Technologies: Node, Express, MongoDB, Mongoose, JavaScript, HTML, CSS and BootStrap</h5>
+    </header>
+    <section class="form-group bg-info">
+        <div>
+            <h3>Create New User</h3>
+            <h5>POST /api/exercise/new-user</h5>
+            <input class='form-input' ng-model='userName'>
+        </div>
+        <div>
+            <button class='btn btn-primary'>
+                <a ng-href='/api/newUser/{{userName}}' style='color:white'>
+            Create Username</a></button>
+        </div>
+    </section>
+    <section class="form-group bg-info">
+        <div>
+            <h3>Add Exercises</h3>
+            <h5>POST /api/exercise/add</h5>
+        </div>
+        <div>
+            <input placeholder='userID' required>
+        </div>
+        <div>
+            <input placeholder='description*' required>
+        </div>
+        <div>
+            <input placeholder='duration* (mins.)' required>
+        </div>
+        <div>
+            <input placeholder='date (yyyy-mm-dd)' required>
+        </div>
+        <div>
+            <button class='btn btn-primary'>Add Exercise</button>
+        </div>
+    </section>
+    <section>
+GET users's exercise log: GET /api/exercise/log?{userId}[&from][&to][&limit]<br>
+
+{ } = required, [ ] = optional <br>
+
+from, to = dates (yyyy-mm-dd); limit = number <br>
+    </section>
+</body>
+
+</html>
