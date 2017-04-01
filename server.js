@@ -30,7 +30,7 @@ app.post('/api/newUser/:userName', (req, res, next) => {
   });
 
   //Saves to the user collection
-  data.save(err=>{
+  data.save(err => {
     if (err) return res.status(500).send({ success: false, message: 'Error saving to database' });
     return res.json({ success: true, data });
   });
@@ -38,7 +38,7 @@ app.post('/api/newUser/:userName', (req, res, next) => {
 });
 
 //Add and return exercise
-app.get('/api/exercise/add/:id/:description/:duration/:date', (req, res, next)=>{
+app.get('/api/exercise/add/:id/:description/:duration/:date', (req, res, next) => {
 
 });
 
