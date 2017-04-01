@@ -25,7 +25,7 @@ app.use(express.static(__dirname + '/public'));
 app.post('/api/newUser/:userName', (req, res, next) => {
   const {userName} = req.params;
   //Creates JSON based off
-  const data = new user({
+  const data = new User({
     userName
   });
 
