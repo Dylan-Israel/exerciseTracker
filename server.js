@@ -22,7 +22,7 @@ app.use(cors());
 app.use(express.static(__dirname + '/public'));
 
 //Add a new user to the database
-app.post('/api/newUser/:userName', (req, res, next) => {
+app.get('/api/newUser/:userName', (req, res, next) => {
   const {userName} = req.params;
   //Creates JSON based off
   const data = new User({
